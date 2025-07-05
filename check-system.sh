@@ -26,10 +26,10 @@ print_error(){
 	echo -e "$TXTRED[ERROR] $1$TXTRESET"
 }
 
-check_system
+# if function fails, the block after || will run
+check_system || {
+	print_error "The Linux version of Bedrock Dedicated Server requires Ubuntu 22.04 (LTS version) or later. Other distributions are not supported."
+	exit 1
+}
 
-if [ "$?" = 1 ]; then 
-	echo "The Linux version of Bedrock Dedicated Server requires Ubuntu 22.04 (LTS version) or later. Other distributions are not supported."
-else 
-	echo "Done compatibility checks. Downloading server software.."
-fi
+echo "Done compatibility checks. Downloading server software.."
