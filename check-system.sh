@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 
 OS_NAME=$(awk -F= '/^NAME=/ { gsub(/"/, "", $2); print $2 }' /etc/os-release)
 OS_VERSION=$(lsb_release -rs)
