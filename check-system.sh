@@ -22,6 +22,10 @@ check_system(){
 	fi
 }
 
+print_error(){
+	echo -e "$TXTRED[ERROR] $1$TXTRESET"
+}
+
 check_system
 
 if [ $? = 1 ]; then 
