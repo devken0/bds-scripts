@@ -8,7 +8,7 @@ TXTRED="\e[31m"
 TXTRESET="\e[0m"
 
 check_system(){
-	if [ $OS_NAME != "Ubuntu" ]; then
+	if [ "$OS_NAME" != "Ubuntu" ]; then
 		return 1 
 	fi
 
@@ -17,7 +17,7 @@ check_system(){
 		return 1
 	fi
 
-	if [ $ARCH != "x86_64" ]; then
+	if [ "$ARCH" != "x86_64" ]; then
 		return 1
 	fi
 }
@@ -28,7 +28,7 @@ print_error(){
 
 check_system
 
-if [ $? = 1 ]; then 
+if [ "$?" = 1 ]; then 
 	echo "The Linux version of Bedrock Dedicated Server requires Ubuntu 22.04 (LTS version) or later. Other distributions are not supported."
 else 
 	echo "Done compatibility checks. Downloading server software.."
