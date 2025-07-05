@@ -4,6 +4,9 @@ OS_NAME=$(awk -F= '/^NAME=/ { gsub(/"/, "", $2); print $2 }' /etc/os-release)
 OS_VERSION=$(lsb_release -rs)
 ARCH=$(uname -m)
 
+TXTRED="\e[31m"
+TXTRESET="\e[0m"
+
 check_system(){
 	if [ $OS_NAME != "Ubuntu" ]; then
 		return 1 
